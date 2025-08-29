@@ -4,9 +4,20 @@ server:
 
 spring:
   cloud:
+    discovery:
+      enabled: false
     gateway:
       routes:
         - id: order-service
           uri: lb://order-service
           predicates:
             - Path=/api/orders/**
+
+
+jwt:
+  secret: myVerySecureSecretKeyThatIsAtLeast32CharactersLong123456789
+
+# Disable Eureka
+eureka:
+  client:
+    enabled: false

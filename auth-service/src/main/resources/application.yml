@@ -1,0 +1,27 @@
+# Server Configuration
+server:
+  port: 8081
+
+spring:
+  application:
+    name: auth-service
+  profiles:
+    active: native
+# Disable unnecessary features
+  jpa:
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url:
+    username:
+    password:
+
+# JWT Configuration
+jwt:
+  secret: myVerySecureSecretKeyThatIsAtLeast32CharactersLong123456789
+  expiration: 86400000 # 24 hours in milliseconds
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
