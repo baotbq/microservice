@@ -1,6 +1,6 @@
 # application.yml
 server:
-  port: 8086
+  port: 8085
 spring:
   application:
     name: order-service
