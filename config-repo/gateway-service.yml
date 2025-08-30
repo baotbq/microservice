@@ -12,6 +12,12 @@ spring:
           uri: lb://order-service
           predicates:
             - Path=/api/orders/**
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/api/auth/**
+          filters:
+            - name: AuthenticationFilter
 
 
 jwt:
@@ -20,4 +26,4 @@ jwt:
 # Disable Eureka
 eureka:
   client:
-    enabled: false
+    enabled: true
