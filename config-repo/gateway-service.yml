@@ -16,14 +16,7 @@ spring:
           uri: lb://auth-service
           predicates:
             - Path=/api/auth/**
-          filters:
-            - name: AuthenticationFilter
 
 
 jwt:
   secret: myVerySecureSecretKeyThatIsAtLeast32CharactersLong123456789
-
-# Disable Eureka
-eureka:
-  client:
-    enabled: true
